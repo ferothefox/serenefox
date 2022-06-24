@@ -1,0 +1,14 @@
+:root {
+    --sfwindow: #121013;
+    --sfsecondary: #201e21; 
+}
+  
+#browser vbox#appcontent tabbrowser, #content, #tabbrowser-tabpanels, browser[type="content-primary"], browser[type="content"] > html {  
+    background: var(--sfwindow) !important;
+}
+  
+@-moz-document url("about:home"), url("about:newtab"), url("about:blank"), url("about:privatebrowsing") {
+    body {
+        background-color: var(--sfwindow) !important;
+    }
+}
