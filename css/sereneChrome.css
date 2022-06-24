@@ -14,6 +14,20 @@
   --animation-easing-function: cubic-bezier(0.07, 0.95, 0, 1);
 }
 
+/* Window colors  */
+:root {
+  --toolbar-bgcolor: var(--sfsecondary) !important;
+  --tabs-border-color: var(--sfsecondary) !important;
+  --lwt-sidebar-background-color: var(--sfwindow) !important;
+  --lwt-toolbar-field-focus: var(--sfsecondary) !important;
+}
+
+:root {
+  --sidebar-width: 18em;
+  --sidebar-min-width: 14em;
+  --sidebar-max-width: 36em;
+}
+
 .urlbarView {
   display: none !important;
 }
@@ -36,14 +50,6 @@
 /* Inactive tabs color */
 #navigator-toolbox {
   background-color: var(--sfwindow) !important;
-}
-
-/* Window colors  */
-:root {
-  --toolbar-bgcolor: var(--sfsecondary) !important;
-  --tabs-border-color: var(--sfsecondary) !important;
-  --lwt-sidebar-background-color: var(--sfwindow) !important;
-  --lwt-toolbar-field-focus: var(--sfsecondary) !important;
 }
 
 /* Sidebar color  */
@@ -215,8 +221,9 @@ toolbarbutton.bookmark-item:not(.subviewbutton) {
 
 @supports not -moz-bool-pref("userChrome.decoration.disable_sidebar_animate") {
   #sidebar-box {
-    min-width: 14em;
-    width: 36em;
+    min-width: var(--sidebar-min-width);
+    width: var(--sidebar-width);
+    max-width: var(--sidebar-max-width);
     /* max-width: 36em; */
     transition: margin-inline-start 0.25s var(--animation-easing-function), opacity 0.25s ease-in-out,
       visibility 0s linear !important;
